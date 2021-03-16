@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\postsController;
+use App\Http\Controllers\profilesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,17 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\profilesController::class, 'index'])->name('home');
-
 Auth::routes();
 
-Route::get('/post', [App\Http\Controllers\postsController::class, 'index'])->name('profile.create');
+Route::get('/post/create', [postsController::class, 'create']);
 
+Route::get('/post/{post}', [postsController::class, 'show']);
 
-Route::get('/profile/{user}', [App\Http\Controllers\profilesController::class, 'index'])->name('profile.show');
+Route::post('/post', [postsController::class, 'store']);
+
+Route::get('/profile/{user}', [profilesController::class, 'index'])->name('profile.show');
