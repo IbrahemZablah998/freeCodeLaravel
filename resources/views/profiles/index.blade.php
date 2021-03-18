@@ -4,14 +4,22 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="https://instagram.fjrs11-1.fna.fbcdn.net/v/t51.2885-19/s150x150/65386004_2544150725622661_399006971514060800_n.jpg?tp=1&_nc_ht=instagram.fjrs11-1.fna.fbcdn.net&_nc_ohc=y4O9sJSmMYMAX9ZXimR&oh=9030b6a4f3cab2bf6570d48e78135a23&oe=60782F67" class="rounded-circle">
+            <img src="{{$user->profile->profileImage()}}" class="rounded-circle w-100">
         </div>
-
         <div class="col-9 pt-5">
             <div class="d-flex justify-content-between align-items-baseline">
-                <h1>{{ $user->username }}</h1>
+                <div class="d-flex align-items-center pb-3">
+                    <div class="h4">{{ $user->username }}</div>
+                    <!-- <button class="btn btn-primary ml-4"  v-text="buttonText">Follow</button> -->
+                    <example-component></example-component>
+                </div>
+                @can ('update', $user->profile)
                 <a href="/post/create">Add New Post</a>
+                @endcan
             </div>
+            @can ('update', $user->profile)
+            <a href="/profile/{{$user->id}}/edit">Edit Profile</a>
+            @endcan
             <div class="d-flex">
                 <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> post</div>
                 <div class="pr-5"><strong>643</strong> following</div>

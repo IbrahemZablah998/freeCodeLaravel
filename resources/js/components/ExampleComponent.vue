@@ -1,16 +1,8 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+        
+        <button class="btn btn-primary ml-4"  v-text="buttonText">Follow</button>
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis quia, accusamus beatae consectetur non consequatur tempore recusandae, error adipisci modi architecto officia asperiores expedita sint, iste aliquid vitae vero commodi.</h1>
     </div>
 </template>
 
