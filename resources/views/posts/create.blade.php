@@ -13,7 +13,6 @@
                     <label for="caption" class="col-md-4 col-form-label">Post Caption</label>
 
                     <input 
-                        id="caption" 
                         type="text" 
                         class="form-control @error('caption') is-invalid @enderror" 
                         name="caption" 
@@ -29,7 +28,7 @@
                 </div>
                 <div class="row">
                     <label for="image" class="col-md-4 col-form-label">Post image</label>
-                    <input type="file" name="image" id="image" class="form-control-file">
+                    <input type="file" name="image" class="form-control-file">
 
                     @error('image')
                     <strong>{{ $message }}</strong>
